@@ -2,15 +2,15 @@
 const data = document.querySelector('#data')
 
 let courses = [
-    { name: "Courses in England", prices: [0, 100] },
-    { name: "Courses in Germany", prices: [500, null] },
-    { name: "Courses in Italy", prices: [100, 200] },
-    { name: "Courses in Russia", prices: [null, 400] },
-    { name: "Courses in China", prices: [50, 250] },
-    { name: "Courses in USA", prices: [200, null] },
+    { name: "England", prices: [0, 100] },
+    { name: "Germany", prices: [500, null] },
+    { name: "Italy", prices: [100, 200] },
+    { name: "Russia", prices: [null, 400] },
+    { name: "China", prices: [50, 250] },
+    { name: "USA", prices: [200, null] },
     { name: "1231Courses in USA", prices: [200, null] },
-    { name: "Courses in Kazakhstan", prices: [56, 324] },
-    { name: "Courses in France", prices: [null, null] },
+    { name: "Kazakhstan", prices: [56, 324] },
+    { name: "France", prices: [null, null] },
 ];
 
 // Варианты цен (фильтры), которые ищет пользователь
@@ -32,6 +32,10 @@ const filterCurses = (filt) => {
 
 //Вызываем функцию фильтрации - в параметрах вариант фильтрации
 filterCurses(requiredRange3)
+
+
+//сортировка по ценам по начальной(первой цене в массиве)
+const sortCourses = courses.sort((a, b) => b.prices[0] - a.prices[0])
 
 //отрисовываем список
 const showCurses = () => {
